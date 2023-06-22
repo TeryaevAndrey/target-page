@@ -13,7 +13,7 @@ export const Banner: FC<Props> = ({ bannerOpacity }) => {
       <Box
         component="section"
         sx={{
-          marginTop: "24vh",
+          marginTop: { xs: "18vh", sm: "22vh", md: "28vh" },
           position: "relative",
           zIndex: 10,
         }}

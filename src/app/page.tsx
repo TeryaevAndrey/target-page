@@ -1,6 +1,7 @@
 "use client";
 
 import { Header, Banner } from "@/components";
+import { ConfirmAccAdminCard } from "@/components";
 import { Box, Typography } from "@mui/material";
 import {
   AnimatePresence,
@@ -400,10 +401,28 @@ export default function Home() {
               }}
             ></Box>
           </motion.div>
-
-          <Box ref={mainContentRef}></Box>
         </Box>
       </AnimatePresence>
+      <Box
+        ref={mainContentRef}
+        sx={{
+          maxWidth: "875px",
+          width: "100%",
+          padding: "0 48px",
+          marginTop: { xs: "-180px", md: "-320px", lg: "-300px" },
+          mx: "auto",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "18px",
+          }}
+        >
+          <ConfirmAccAdminCard />
+        </Box>
+      </Box>
     </div>
   );
 }
