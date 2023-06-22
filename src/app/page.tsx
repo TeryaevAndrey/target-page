@@ -14,66 +14,76 @@ import { useEffect, useRef, useState } from "react";
 export default function Home() {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const blockRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const mainContentRef = useRef(null);
+  const { scrollYProgress: scrollYProgressCards } = useScroll({
     target: blockRef,
     offset: ["end end", "start start"],
   });
 
+  const { scrollYProgress: scrollYProgressMain } = useScroll({
+    target: mainContentRef,
+    offset: ["end end", "start start"],
+  });
+
   const translateX1 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * -0.42, innerWidth * -0.8]
   );
 
   const translateY1 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * -0.12, innerWidth * -0.3]
   );
 
-  const rotate1 = useTransform(scrollYProgress, [0, 1], [4, -30]);
+  const rotate1 = useTransform(scrollYProgressCards, [0, 1], [4, -30]);
 
   const translateX2 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * 0.42, innerWidth * 0.8]
   );
 
   const translateY2 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * -0.1, innerWidth * -0.4]
   );
 
-  const rotate2 = useTransform(scrollYProgress, [0, 1], [21, -90]);
+  const rotate2 = useTransform(scrollYProgressCards, [0, 1], [21, -90]);
 
   const translateX3 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * -0.36, innerWidth * -0.8]
   );
 
   const translateY3 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * -0.16, innerWidth * -0.4]
   );
 
-  const rotate3 = useTransform(scrollYProgress, [0, 1], [-18, -120]);
+  const rotate3 = useTransform(scrollYProgressCards, [0, 1], [-18, -120]);
 
   const translateX4 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * 0.42, innerWidth * 0.8]
   );
 
   const translateY4 = useTransform(
-    scrollYProgress,
+    scrollYProgressCards,
     [0, 1],
     [innerWidth * -0.3, innerWidth * -0.8]
   );
 
-  const rotate4 = useTransform(scrollYProgress, [0, 1], [-4, -120]);
+  const rotate4 = useTransform(scrollYProgressCards, [0, 1], [-4, -120]);
+
+  const opacityShadowBlock = useTransform(scrollYProgressMain, [0, 1], [1, 0]);
+
+  const bannerOpacity = useTransform(scrollYProgressMain, [0, 1], [1, -2]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -90,7 +100,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Banner />
+      <Banner bannerOpacity={bannerOpacity} />
       <AnimatePresence>
         <Box
           ref={blockRef}
@@ -366,6 +376,32 @@ export default function Home() {
               </Typography>
             </Box>
           </motion.div>
+
+          <motion.div
+            style={{
+              opacity: opacityShadowBlock,
+            }}
+          >
+            <Box
+              sx={{
+                position: "fixed",
+                right: 0,
+                top: { xs: "50vh", sm: "380px" },
+                width: { xs: "500px", sm: "900px" },
+                height: { xs: "650px", sm: "1100px" },
+                left: 0,
+                margin: "auto",
+                mixBlendMode: "color-dodge",
+                borderRadius: "380px",
+                filter: { xs: "blur(66px)", sm: "blur(76px)" },
+                zIndex: -1,
+                background:
+                  "radial-gradient(50% 38% at 48% 50%,#96c93d 0,rgba(0,176,155,.25) 100%)!important",
+              }}
+            ></Box>
+          </motion.div>
+
+          <Box ref={mainContentRef}></Box>
         </Box>
       </AnimatePresence>
     </div>
