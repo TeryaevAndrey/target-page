@@ -1,5 +1,3 @@
-"use client";
-
 import { Box } from "@mui/material";
 import Link from "next/link";
 
@@ -24,6 +22,10 @@ export const Header = () => {
             backgroundColor: "#27292d",
             fontSize: "15px",
             lineHeight: 1.2,
+            transition: "all 0.2s ease",
+            "&:hover": {
+              backgroundColor: "#3478f6",
+            },
           }}
         >
           <span>реклама в телеграм каналах</span>
@@ -51,13 +53,13 @@ export const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M21 12a.922.922 0 0 0-.916-.927H3.916A.922.922 0 0 0 3 12c0 .512.41.927.916.927h16.168A.922.922 0 0 0 21 12Z"
               ></path>
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M11.086 19.227a.935.935 0 0 0-.003-1.311l-5.869-5.917 5.87-5.915a.935.935 0 0 0 .002-1.311.908.908 0 0 0-1.296-.003l-6.52 6.572a.934.934 0 0 0 0 1.314l6.52 6.574a.908.908 0 0 0 1.296-.003Z"
               ></path>
             </svg>
