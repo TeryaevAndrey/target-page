@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 
-export const RightsBotCard = () => {
+export const IncomeCard = () => {
   return (
     <Box className="card">
       <Box
@@ -32,7 +32,7 @@ export const RightsBotCard = () => {
               lineHeight: 1.2,
             }}
           >
-            Важно дать боту <br /> определенные права
+            Доход виден в реальном времени
           </Typography>
           <Typography
             component="p"
@@ -43,36 +43,29 @@ export const RightsBotCard = () => {
               color: "hsla(0,0%,100%,.5)",
             }}
           >
-            Право на публикацию сообщений - для управления рекламным постом.
+            Занимайтесь контентом, а мы займемся рекламой.
           </Typography>
-          <Typography
-            component="p"
+          <Button
             sx={{
-              fontSize: "16px",
-              fontWeight: 400,
-              lineHeight: 1.2,
-              color: "hsla(0,0%,100%,.5)",
+              fontSize: "15px",
+              fontWeight: 500,
+              lineHeight: 1,
+              padding: "0 14px",
+              color: "#fff",
+              backgroundColor: "#3478f6",
+              textTransform: "none",
+              height: "38px",
+              width: "max-content",
+              borderRadius: "13px",
             }}
           >
-            Право на добавление участников позволит добавить юзер-бота для
-            аналитики рекламного поста и канала.
-          </Typography>
-          <Typography
-            component="p"
-            sx={{
-              fontSize: "16px",
-              fontWeight: 400,
-              lineHeight: 1.2,
-              color: "#a4d2ff",
-            }}
-          >
-            Бот не получит доступа к другим постам
-          </Typography>
+            Ок, добавить бота
+          </Button>
         </Box>
 
         <Image
-          className="rights-img"
-          src="/images/rights-img.svg"
+          className="income-img"
+          src="/images/income.webp"
           alt="confirm-admin"
           width={0}
           height={0}

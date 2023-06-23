@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-export const RightsBotCard = () => {
+export const BotTapeCard = () => {
   return (
     <Box className="card">
       <Box
@@ -32,7 +32,7 @@ export const RightsBotCard = () => {
               lineHeight: 1.2,
             }}
           >
-            Важно дать боту <br /> определенные права
+            Бот добавит в ленту один пост
           </Typography>
           <Typography
             component="p"
@@ -43,7 +43,7 @@ export const RightsBotCard = () => {
               color: "hsla(0,0%,100%,.5)",
             }}
           >
-            Право на публикацию сообщений - для управления рекламным постом.
+            Это будет пост до 90 символов с рекламой канала или сайта.
           </Typography>
           <Typography
             component="p"
@@ -54,8 +54,8 @@ export const RightsBotCard = () => {
               color: "hsla(0,0%,100%,.5)",
             }}
           >
-            Право на добавление участников позволит добавить юзер-бота для
-            аналитики рекламного поста и канала.
+            Пост опубликуется без звука, будет редактироваться - реклама
+            меняться
           </Typography>
           <Typography
             component="p"
@@ -66,13 +66,13 @@ export const RightsBotCard = () => {
               color: "#a4d2ff",
             }}
           >
-            Бот не получит доступа к другим постам
+            Тематика рекламы = тематика канала
           </Typography>
         </Box>
 
         <Image
-          className="rights-img"
-          src="/images/rights-img.svg"
+          className="start-bot-img"
+          src="/images/tape.webp"
           alt="confirm-admin"
           width={0}
           height={0}

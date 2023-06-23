@@ -1,7 +1,16 @@
 "use client";
 
-import { Header, Banner, BotCard, RightsBotCard } from "@/components";
+import {
+  Header,
+  Banner,
+  BotCard,
+  RightsBotCard,
+  BotTapeCard,
+  RatioCard,
+  IncomeCard,
+} from "@/components";
 import { ConfirmAccAdminCard } from "@/components";
+import { StartBotCard } from "@/components/Cards/StartBotCard/StartBotCard";
 import { Box, Typography } from "@mui/material";
 import {
   AnimatePresence,
@@ -127,6 +136,7 @@ export default function Home() {
             translateY: translateY1,
             rotate: rotate1,
             scale: 0.5,
+            zIndex: 10,
           }}
         >
           <Box
@@ -187,6 +197,7 @@ export default function Home() {
             translateY: translateY2,
             rotate: rotate2,
             scale: 0.9,
+            zIndex: 10,
           }}
         >
           <Box
@@ -247,6 +258,7 @@ export default function Home() {
             translateY: translateY3,
             rotate: rotate3,
             scale: 0.9,
+            zIndex: 10,
           }}
         >
           <Box
@@ -307,6 +319,7 @@ export default function Home() {
             translateY: translateY4,
             rotate: rotate4,
             scale: 0.5,
+            zIndex: 10,
           }}
         >
           <Box
@@ -407,6 +420,10 @@ export default function Home() {
           <ConfirmAccAdminCard />
           <BotCard />
           <RightsBotCard />
+          <StartBotCard />
+          <BotTapeCard />
+          <RatioCard />
+          <IncomeCard />
         </Box>
       </Box>
     </div>

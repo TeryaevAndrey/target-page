@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-export const RightsBotCard = () => {
+export const RatioCard = () => {
   return (
     <Box className="card">
       <Box
@@ -12,7 +12,7 @@ export const RightsBotCard = () => {
           width: "100%",
           flexDirection: { xs: "column" },
           "@media(min-width: 768px)": {
-            flexDirection: "row",
+            flexDirection: "row-reverse",
           },
           gap: "40px",
         }}
@@ -32,7 +32,7 @@ export const RightsBotCard = () => {
               lineHeight: 1.2,
             }}
           >
-            Важно дать боту <br /> определенные права
+            Если рекламы для канала не будет
           </Typography>
           <Typography
             component="p"
@@ -43,19 +43,9 @@ export const RightsBotCard = () => {
               color: "hsla(0,0%,100%,.5)",
             }}
           >
-            Право на публикацию сообщений - для управления рекламным постом.
-          </Typography>
-          <Typography
-            component="p"
-            sx={{
-              fontSize: "16px",
-              fontWeight: 400,
-              lineHeight: 1.2,
-              color: "hsla(0,0%,100%,.5)",
-            }}
-          >
-            Право на добавление участников позволит добавить юзер-бота для
-            аналитики рекламного поста и канала.
+            Тогда мы покажем в вашем канале сервисное сообщение для привлечения
+            рекламодателей и с приоритетом будем публиковать рекламу в ваш канал
+            с повышеным доходом
           </Typography>
           <Typography
             component="p"
@@ -66,13 +56,13 @@ export const RightsBotCard = () => {
               color: "#a4d2ff",
             }}
           >
-            Бот не получит доступа к другим постам
+            Повышающий коэффицент 25% к стоимости клика
           </Typography>
         </Box>
 
         <Image
-          className="rights-img"
-          src="/images/rights-img.svg"
+          className="ratio-img"
+          src="/images/ratio.webp"
           alt="confirm-admin"
           width={0}
           height={0}
