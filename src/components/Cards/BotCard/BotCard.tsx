@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-export const ConfirmAccAdminCard = () => {
+export const BotCard = () => {
   return (
     <Box className="card">
       <Box
@@ -12,7 +12,7 @@ export const ConfirmAccAdminCard = () => {
           width: "100%",
           flexDirection: { xs: "column" },
           "@media(min-width: 768px)": {
-            flexDirection: "row",
+            flexDirection: "row-reverse",
           },
           gap: "40px",
         }}
@@ -22,6 +22,7 @@ export const ConfirmAccAdminCard = () => {
             display: "flex",
             flexDirection: "column",
             gap: "25px",
+            maxWidth: {xs: "350px", sm: "100%"},
           }}
         >
           <Typography
@@ -32,7 +33,7 @@ export const ConfirmAccAdminCard = () => {
               lineHeight: 1.2,
             }}
           >
-            Подтвердите <br /> аккаунт админа
+            Добавьте рекламного бота в свой канал
           </Typography>
           <Typography
             component="p"
@@ -43,8 +44,7 @@ export const ConfirmAccAdminCard = () => {
               color: "hsla(0,0%,100%,.5)",
             }}
           >
-            Это безопасно, нужно для связи вашего канала с аккаунтом в нашем
-            сервисе
+            Это безопасно, бот не сможет угнать канал или удалить посты.
           </Typography>
           <Typography
             component="p"
@@ -55,13 +55,13 @@ export const ConfirmAccAdminCard = () => {
               color: "#a4d2ff",
             }}
           >
-            Мы не получим доступа к аккаунту
+            Важно дать 2 права: на публикацию сообщений и добавление участников
           </Typography>
         </Box>
 
         <Image
-          className="confirm-admin-img"
-          src="/images/confirm-admin.webp"
+          className="bot-img"
+          src="/images/bot-img.webp"
           alt="confirm-admin"
           width={0}
           height={0}
