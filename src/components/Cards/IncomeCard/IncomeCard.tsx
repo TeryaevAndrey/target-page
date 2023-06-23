@@ -57,6 +57,10 @@ export const IncomeCard = () => {
               height: "38px",
               width: "max-content",
               borderRadius: "13px",
+              "&:hover": {
+                backgroundColor: "#3478f6",
+                opacity: 0.5,
+              },
             }}
           >
             Ок, добавить бота

@@ -7,3 +7,4 @@ export * from "./Cards/RightsBotCard/RightsBotCard";
 export * from "./Cards/BotTapeCard/BotTapeCard";
 export * from "./Cards/RatioCard/RatioCard";
 export * from "./Cards/IncomeCard/IncomeCard";
+export * from "./Callback/Callback";

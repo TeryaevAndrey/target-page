@@ -84,6 +84,10 @@ export const Banner: FC<Props> = ({ bannerOpacity }) => {
               overflow: "hidden",
               textTransform: "none",
               mx: "auto",
+              "&:hover": {
+                backgroundColor: "#3478f6",
+                opacity: 0.5,
+              },
             }}
           >
             Подключить канал

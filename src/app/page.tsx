@@ -8,6 +8,7 @@ import {
   BotTapeCard,
   RatioCard,
   IncomeCard,
+  Callback,
 } from "@/components";
 import { ConfirmAccAdminCard } from "@/components";
 import { StartBotCard } from "@/components/Cards/StartBotCard/StartBotCard";
@@ -425,6 +426,15 @@ export default function Home() {
           <RatioCard />
           <IncomeCard />
         </Box>
+      </Box>
+
+      <Box
+        sx={{
+          maxWidth: "675px",
+          mx: "auto",
+        }}
+      >
+        <Callback />
       </Box>
     </div>
   );
