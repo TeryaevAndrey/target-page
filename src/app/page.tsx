@@ -9,16 +9,12 @@ import {
   RatioCard,
   IncomeCard,
   Callback,
+  Questions,
+  ConfirmAccAdminCard,
+  StartBotCard,
 } from "@/components";
-import { ConfirmAccAdminCard } from "@/components";
-import { StartBotCard } from "@/components/Cards/StartBotCard/StartBotCard";
 import { Box, Typography } from "@mui/material";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -432,9 +428,11 @@ export default function Home() {
         sx={{
           maxWidth: "675px",
           mx: "auto",
+          padding: { xs: "0 24px", sm: "0 48px" },
         }}
       >
         <Callback />
+        <Questions />
       </Box>
     </div>
   );

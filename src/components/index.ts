@@ -7,4 +7,8 @@ export * from "./Cards/RightsBotCard/RightsBotCard";
 export * from "./Cards/BotTapeCard/BotTapeCard";
 export * from "./Cards/RatioCard/RatioCard";
 export * from "./Cards/IncomeCard/IncomeCard";
+export * from "./Cards/StartBotCard/StartBotCard";
 export * from "./Callback/Callback";
+export * from "./Questions/Questions";
+export * from "./Questions/QuestionItem/QuestionItem";
+export * from "./Footer/Footer";

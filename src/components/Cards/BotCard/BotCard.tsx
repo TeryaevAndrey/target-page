@@ -22,7 +22,7 @@ export const BotCard = () => {
             display: "flex",
             flexDirection: "column",
             gap: "25px",
-            maxWidth: {xs: "350px", sm: "100%"},
+            maxWidth: { xs: "350px", sm: "100%" },
           }}
         >
           <Typography
