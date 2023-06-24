@@ -1,7 +1,8 @@
-import { Box, Button, FormControl, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import InputMask from "react-input-mask";
 
 type Props = {
   isOpenLogin: boolean;
@@ -608,19 +609,21 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
               >
                 +7
               </Typography>
-              <Box
-                component="input"
-                placeholder="Введите email"
-                sx={{
-                  width: "100%",
-                  backgroundColor: "transparent",
-                  border: "none",
-                  outline: "none",
-                  color: "#fff",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                }}
-              />
+              <InputMask mask="(999) 999-99-99" maskPlaceholder={null} value="" onChange={() => console.log("asd")}>
+                <Box
+                  component="input"
+                  placeholder="Введите телефон"
+                  sx={{
+                    width: "100%",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    outline: "none",
+                    color: "#fff",
+                    fontSize: "15px",
+                    fontWeight: 600,
+                  }}
+                />
+              </InputMask>
             </Box>
 
             <Button

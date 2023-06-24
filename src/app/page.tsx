@@ -119,6 +119,12 @@ export default function Home() {
       <Box
         ref={blockRef}
         sx={{
+          marginTop: "18vh",
+        }}
+      ></Box>
+
+      <Box
+        sx={{
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
@@ -127,7 +133,6 @@ export default function Home() {
           position: "relative",
           zIndex: 2,
           transition: "0.3s",
-          marginTop: "18vh",
         }}
       >
         <motion.div
