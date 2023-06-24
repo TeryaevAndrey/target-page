@@ -12,6 +12,7 @@ import {
   Questions,
   ConfirmAccAdminCard,
   StartBotCard,
+  Footer,
 } from "@/components";
 import { Box, Typography } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -434,6 +435,8 @@ export default function Home() {
         <Callback />
         <Questions />
       </Box>
+
+      <Footer />
     </div>
   );
 }

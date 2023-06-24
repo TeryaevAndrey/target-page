@@ -1,7 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import { useState } from "react";
+import { FC, useState } from "react";
 
-export const QuestionItem = () => {
+type Props = {
+  title: string;
+  contentText: string;
+};
+
+export const QuestionItem: FC<Props> = ({ title, contentText }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -11,7 +16,7 @@ export const QuestionItem = () => {
         borderTop: "1px solid rgba(45,47,52,.5)",
         borderBottom: "1px solid rgba(45,47,52,.5)",
 
-        "&:not(:first-child)": {
+        "&:not(:first-of-type)": {
           borderTop: "none",
         },
         position: "relative",
@@ -22,7 +27,8 @@ export const QuestionItem = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "start",
+          alignItems: "center",
+          gap: "20px",
           cursor: "pointer",
           "&:hover p": {
             opacity: 0.5,
@@ -48,7 +54,7 @@ export const QuestionItem = () => {
             },
           }}
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit?
+          {title}
         </Typography>
         <Box
           sx={{
@@ -60,18 +66,37 @@ export const QuestionItem = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            mb: "auto",
           }}
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-            className="eNH5J7"
-          >
-            <path d="M12.85 4a.85.85 0 0 0-1.7 0v7.15H4a.85.85 0 0 0 0 1.7h7.15V20a.85.85 0 0 0 1.7 0v-7.15H20a.85.85 0 0 0 0-1.7h-7.15V4Z"></path>
-          </svg>
+          {isOpen ? (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="eNH5J7"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M3.15 12c0-.47.38-.85.85-.85h16a.85.85 0 0 1 0 1.7H4a.85.85 0 0 1-.85-.85Z"
+                fill="#fff"
+              ></path>
+            </svg>
+          ) : (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              className="eNH5J7"
+            >
+              <path d="M12.85 4a.85.85 0 0 0-1.7 0v7.15H4a.85.85 0 0 0 0 1.7h7.15V20a.85.85 0 0 0 1.7 0v-7.15H20a.85.85 0 0 0 0-1.7h-7.15V4Z"></path>
+            </svg>
+          )}
         </Box>
       </Box>
       {isOpen && (
@@ -85,10 +110,7 @@ export const QuestionItem = () => {
               lineHeight: 1.4,
             }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            aliquid reiciendis praesentium. Veritatis, sint. Ex temporibus
-            impedit tempora error aliquam, eos magni pariatur dolor id, laborum
-            delectus deleniti sed ducimus!
+            {contentText}
           </Typography>
         </Box>
       )}
