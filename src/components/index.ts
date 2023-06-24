@@ -12,3 +12,4 @@ export * from "./Callback/Callback";
 export * from "./Questions/Questions";
 export * from "./Questions/QuestionItem/QuestionItem";
 export * from "./Footer/Footer";
+export * from "./LoginModal/LoginModal";

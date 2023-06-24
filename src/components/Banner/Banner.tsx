@@ -5,9 +5,10 @@ import { FC } from "react";
 
 type Props = {
   bannerOpacity: MotionValue<number>;
+  setIsOpenLogin: Function;
 };
 
-export const Banner: FC<Props> = ({ bannerOpacity }) => {
+export const Banner: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
   return (
     <motion.div style={{ opacity: bannerOpacity }}>
       <Box
@@ -89,6 +90,7 @@ export const Banner: FC<Props> = ({ bannerOpacity }) => {
                 opacity: 0.5,
               },
             }}
+            onClick={() => setIsOpenLogin(true)}
           >
             Подключить канал
           </Button>

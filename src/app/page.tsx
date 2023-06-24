@@ -13,6 +13,7 @@ import {
   ConfirmAccAdminCard,
   StartBotCard,
   Footer,
+  LoginModal,
 } from "@/components";
 import { Box, Typography } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -23,6 +24,7 @@ export default function Home() {
   const [innerWidth, setInnerWidth] = useState(
     window.innerWidth ? window.innerWidth : 0
   );
+  const [isOpenLogin, setIsOpenLogin] = useState(false);
   const blockRef = useRef(null);
   const mainContentRef = useRef(null);
   const { scrollYProgress: scrollYProgressCards } = useScroll({
@@ -112,7 +114,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Banner bannerOpacity={bannerOpacity} />
+      <Banner bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
 
       <Box
         ref={blockRef}
@@ -437,6 +439,8 @@ export default function Home() {
       </Box>
 
       <Footer />
+
+      <LoginModal isOpenLogin={isOpenLogin} setIsOpenLogin={setIsOpenLogin} />
     </div>
   );
 }
