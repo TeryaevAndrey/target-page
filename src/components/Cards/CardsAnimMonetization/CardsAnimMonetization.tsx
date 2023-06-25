@@ -92,7 +92,7 @@ const CardsAnimMonetization: FC<Props> = ({
         <motion.div
           style={{
             rotate: rotate1,
-            scale: scale1,
+            scale: innerWidth > 1024 ? scale1 : 1,
           }}
         >
           <Box
@@ -103,7 +103,9 @@ const CardsAnimMonetization: FC<Props> = ({
               padding: "48px",
 
               "@media(max-width: 640px)": {
-                width: "425px",
+                width: "100%",
+                maxWidth: "90%",
+                margin: "0 auto",
                 padding: "24px",
               },
               "@media(max-width: 425px)": {
@@ -321,6 +323,9 @@ const CardsAnimMonetization: FC<Props> = ({
               borderRadius: "20px",
               maxWidth: "670px",
               padding: "48px",
+              "@media(max-width: 700px)": {
+                opacity: 0,
+              },
 
               "@media(max-width: 640px)": {
                 width: "425px",
@@ -542,9 +547,14 @@ const CardsAnimMonetization: FC<Props> = ({
               maxWidth: "670px",
               padding: "48px",
 
+              "@media(max-width: 700px)": {
+                opacity: "0",
+              },
+
               "@media(max-width: 640px)": {
                 width: "425px",
                 padding: "24px",
+                display: "none",
               },
               "@media(max-width: 425px)": {
                 width: "370px",

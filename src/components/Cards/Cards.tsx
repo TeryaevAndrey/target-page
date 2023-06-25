@@ -341,7 +341,7 @@ const Cards: FC<Props> = ({
       <motion.div
         style={{
           opacity: opacityShadowBlock,
-          mixBlendMode: "color-dodge",  
+          mixBlendMode: "color-dodge",
         }}
       >
         <Box

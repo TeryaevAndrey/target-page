@@ -14,12 +14,16 @@ import {
   StartBotCard,
   Footer,
   LoginModal,
+  BannerMonetization,
 } from "@/components";
 import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
 import { lazy, useEffect, useRef, useState } from "react";
 
-const LazyCards = lazy(() => import("../components/Cards/Cards"));
+const LazyCardsAnimMonetization = lazy(
+  () =>
+    import("../components/Cards/CardsAnimMonetization/CardsAnimMonetization")
+);
 
 export default function Home() {
   const [innerWidth, setInnerWidth] = useState(
@@ -38,7 +42,7 @@ export default function Home() {
     offset: ["end end", "start start"],
   });
 
-  const bannerOpacity = useTransform(scrollYProgressMain, [0, 0.6], [1, -1]);
+  const bannerOpacity = useTransform(scrollYProgressMain, [0.2, 1], [1, -1]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,10 +58,13 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
-      <Banner bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
+      <Header title="монетизация телеграм канала" link="/monetization" />
+      <BannerMonetization
+        bannerOpacity={bannerOpacity}
+        setIsOpenLogin={setIsOpenLogin}
+      />
 
-      <LazyCards
+      <LazyCardsAnimMonetization
         blockRef={blockRef}
         mainContentRef={mainContentRef}
         scrollYProgressCards={scrollYProgressCards}

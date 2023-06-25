@@ -1,7 +1,13 @@
 import { Box } from "@mui/material";
 import Link from "next/link";
+import { FC } from "react";
 
-export const Header = () => {
+type Props = {
+  link: string;
+  title: string;
+};
+
+export const Header: FC<Props> = ({ link, title }) => {
   return (
     <Box
       sx={{
@@ -11,7 +17,7 @@ export const Header = () => {
         padding: "15px 0",
       }}
     >
-      <Link href="/monetization">
+      <Link href={link}>
         <Box
           sx={{
             display: "flex",
@@ -28,7 +34,7 @@ export const Header = () => {
             },
           }}
         >
-          <span>реклама в телеграм каналах</span>
+          <span>{title}</span>
           <Box
             sx={{
               width: "28px",

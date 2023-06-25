@@ -21,10 +21,7 @@ import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
 import { lazy, useEffect, useRef, useState } from "react";
 
-const LazyCardsAnimMonetization = lazy(
-  () =>
-    import("../../components/Cards/CardsAnimMonetization/CardsAnimMonetization")
-);
+const LazyCards = lazy(() => import("../../components/Cards/Cards"));
 
 export default function Monetization() {
   const [innerWidth, setInnerWidth] = useState(
@@ -43,7 +40,7 @@ export default function Monetization() {
     offset: ["end end", "start start"],
   });
 
-  const bannerOpacity = useTransform(scrollYProgressMain, [0.2, 1], [1, -1]);
+  const bannerOpacity = useTransform(scrollYProgressMain, [0, 0.6], [1, -1]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,13 +56,10 @@ export default function Monetization() {
 
   return (
     <div>
-      <Header />
-      <BannerMonetization
-        bannerOpacity={bannerOpacity}
-        setIsOpenLogin={setIsOpenLogin}
-      />
+      <Header title="реклама в телеграм каналах" link="/" />
+      <Banner bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
 
-      <LazyCardsAnimMonetization
+      <LazyCards
         blockRef={blockRef}
         mainContentRef={mainContentRef}
         scrollYProgressCards={scrollYProgressCards}
