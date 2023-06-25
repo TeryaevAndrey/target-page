@@ -57,7 +57,7 @@ export default function Monetization() {
   }, []);
 
   return (
-    <div>
+    <Box>
       <Header title="реклама в телеграм каналах" link="/" />
       <Banner bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
 
@@ -107,6 +107,6 @@ export default function Monetization() {
       <Footer />
 
       <LoginModal isOpenLogin={isOpenLogin} setIsOpenLogin={setIsOpenLogin} />
-    </div>
+    </Box>
   );
 }

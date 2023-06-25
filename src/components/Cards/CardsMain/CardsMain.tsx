@@ -323,8 +323,9 @@ const CardsMain: FC<Props> = ({
               borderRadius: "20px",
               maxWidth: "670px",
               padding: "48px",
-              "@media(max-width: 700px)": {
-                opacity: 0,
+
+              "@media(max-width: 1024px)": {
+                display: "none",
               },
 
               "@media(max-width: 640px)": {
@@ -547,6 +548,10 @@ const CardsMain: FC<Props> = ({
               maxWidth: "670px",
               padding: "48px",
 
+              "@media(max-width: 1024px)": {
+                display: "none",
+              },
+
               "@media(max-width: 700px)": {
                 opacity: "0",
               },
@@ -554,7 +559,6 @@ const CardsMain: FC<Props> = ({
               "@media(max-width: 640px)": {
                 width: "425px",
                 padding: "24px",
-                display: "none",
               },
               "@media(max-width: 425px)": {
                 width: "370px",
