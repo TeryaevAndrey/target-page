@@ -86,7 +86,7 @@ export default function Home() {
           <StartBotCard />
           <BotTapeCard />
           <RatioCard />
-          <IncomeCard />
+          <IncomeCard setIsOpenLogin={setIsOpenLogin} />
         </Box>
       </Box>
 

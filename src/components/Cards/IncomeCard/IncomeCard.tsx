@@ -1,8 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import IncomeImg from "../../../../public/images/income.webp";
+import { FC } from "react";
 
-export const IncomeCard = () => {
+type Props = {
+  setIsOpenLogin: Function;
+};
+
+export const IncomeCard: FC<Props> = ({ setIsOpenLogin }) => {
   return (
     <Box className="card">
       <Box
@@ -63,6 +68,7 @@ export const IncomeCard = () => {
                 opacity: 0.5,
               },
             }}
+            onClick={() => setIsOpenLogin(true)}
           >
             Ок, добавить бота
           </Button>
