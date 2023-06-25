@@ -24,6 +24,7 @@ export const BotCard = () => {
             flexDirection: "column",
             gap: "25px",
             maxWidth: { xs: "350px", sm: "100%" },
+            width: {xs: "100%", md: "50%"}
           }}
         >
           <Typography

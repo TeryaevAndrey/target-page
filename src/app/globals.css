@@ -78,7 +78,7 @@ body::-webkit-scrollbar-track {
 }
 
 .ratio-img {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
@@ -116,6 +116,10 @@ body::-webkit-scrollbar-track {
 
   .income-img {
     max-width: 100%;
+  }
+
+  .ratio-img {
+    width: 100%;  
   }
 }
 
