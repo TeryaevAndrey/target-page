@@ -86,7 +86,7 @@ export const Cards: FC<Props> = ({
         position: "relative",
         zIndex: 2,
         transition: "0.3s",
-        mt: "18vh"
+        mt: "18vh",
       }}
     >
       <motion.div

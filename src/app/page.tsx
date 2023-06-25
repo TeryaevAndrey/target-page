@@ -37,7 +37,7 @@ export default function Home() {
     offset: ["end end", "start start"],
   });
 
-  const bannerOpacity = useTransform(scrollYProgressMain, [0, 1], [1, -1]);
+  const bannerOpacity = useTransform(scrollYProgressMain, [0, 0.6], [1, -1]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,7 +67,7 @@ export default function Home() {
           maxWidth: "875px",
           width: "100%",
           padding: { xs: "0 24px", sm: "0 48px" },
-          marginTop: { xs: "-180px", md: "-320px", lg: "-300px" },
+          marginTop: { xs: "-120px", md: "-320px", lg: "-300px" },
           mx: "auto",
         }}
       >
