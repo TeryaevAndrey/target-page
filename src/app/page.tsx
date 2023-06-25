@@ -22,7 +22,9 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [innerWidth, setInnerWidth] = useState(
-    typeof window.innerWidth !== "undefined" ? window.innerWidth : 0
+    typeof global.window.innerWidth !== "undefined"
+      ? global.window.innerWidth
+      : 0
   );
   const [isOpenLogin, setIsOpenLogin] = useState(false);
   const blockRef = useRef(null);
