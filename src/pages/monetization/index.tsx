@@ -21,7 +21,9 @@ import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
 import { lazy, useEffect, useRef, useState } from "react";
 
-const LazyCards = lazy(() => import("../../components/Cards/Cards"));
+const LazyCards = lazy(
+  () => import("../../components/Cards/CardsMonetization/CardsMonetization")
+);
 
 export default function Monetization() {
   const [innerWidth, setInnerWidth] = useState(

@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FC, RefObject } from "react";
-import InfoImg from "./../../../public/images/info.png";
+import InfoImg from "../../../../public/images/info.png";
 
 type Props = {
   blockRef: RefObject<HTMLDivElement>;
@@ -11,7 +11,7 @@ type Props = {
   innerWidth: number;
 };
 
-const Cards: FC<Props> = ({
+const CardsMonetization: FC<Props> = ({
   blockRef,
   scrollYProgressCards,
   mainContentRef,
@@ -368,4 +368,4 @@ const Cards: FC<Props> = ({
   );
 };
 
-export default Cards;
+export default CardsMonetization;

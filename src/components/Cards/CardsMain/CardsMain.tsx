@@ -12,7 +12,7 @@ type Props = {
   innerWidth: number;
 };
 
-const CardsAnimMonetization: FC<Props> = ({
+const CardsMain: FC<Props> = ({
   blockRef,
   scrollYProgressCards,
   mainContentRef,
@@ -793,4 +793,4 @@ const CardsAnimMonetization: FC<Props> = ({
   );
 };
 
-export default CardsAnimMonetization;
+export default CardsMain;

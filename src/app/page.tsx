@@ -20,10 +20,7 @@ import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
 import { lazy, useEffect, useRef, useState } from "react";
 
-const LazyCardsAnimMonetization = lazy(
-  () =>
-    import("../components/Cards/CardsAnimMonetization/CardsAnimMonetization")
-);
+const LazyCards = lazy(() => import("../components/Cards/CardsMain/CardsMain"));
 
 export default function Home() {
   const [innerWidth, setInnerWidth] = useState(
@@ -64,7 +61,7 @@ export default function Home() {
         setIsOpenLogin={setIsOpenLogin}
       />
 
-      <LazyCardsAnimMonetization
+      <LazyCards
         blockRef={blockRef}
         mainContentRef={mainContentRef}
         scrollYProgressCards={scrollYProgressCards}
