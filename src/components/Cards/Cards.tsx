@@ -7,12 +7,14 @@ type Props = {
   blockRef: RefObject<HTMLDivElement>;
   mainContentRef: RefObject<HTMLDivElement>;
   scrollYProgressCards: MotionValue<number>;
+  innerWidth: number;
 };
 
 export const Cards: FC<Props> = ({
   blockRef,
   scrollYProgressCards,
   mainContentRef,
+  innerWidth,
 }) => {
   const translateX1 = useTransform(
     scrollYProgressCards,

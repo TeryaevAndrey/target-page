@@ -21,6 +21,9 @@ import { useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const [innerWidth, setInnerWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
   const [isOpenLogin, setIsOpenLogin] = useState(false);
   const blockRef = useRef(null);
   const mainContentRef = useRef(null);
@@ -36,6 +39,18 @@ export default function Home() {
 
   const bannerOpacity = useTransform(scrollYProgressMain, [0, 1], [1, -1]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <Header />
@@ -45,6 +60,7 @@ export default function Home() {
         blockRef={blockRef}
         mainContentRef={mainContentRef}
         scrollYProgressCards={scrollYProgressCards}
+        innerWidth={innerWidth}
       />
       <Box
         sx={{
