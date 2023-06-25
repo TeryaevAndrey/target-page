@@ -35,7 +35,7 @@ export default function Monetization() {
   const mainContentRef = useRef(null);
   const { scrollYProgress: scrollYProgressCards } = useScroll({
     target: blockRef,
-    offset: ["end end", "start start"],
+    offset: ["start end", "start start"],
   });
 
   const { scrollYProgress: scrollYProgressMain } = useScroll({
@@ -43,7 +43,7 @@ export default function Monetization() {
     offset: ["end end", "start start"],
   });
 
-  const bannerOpacity = useTransform(scrollYProgressMain, [0, 0.6], [1, -1]);
+  const bannerOpacity = useTransform(scrollYProgressMain, [0.2, 1], [1, -1]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -71,7 +71,7 @@ export default function Monetization() {
         scrollYProgressCards={scrollYProgressCards}
         innerWidth={innerWidth}
       />
-      {/* <Box
+      <Box
         sx={{
           maxWidth: "875px",
           width: "100%",
@@ -95,7 +95,7 @@ export default function Monetization() {
           <RatioCard />
           <IncomeCard setIsOpenLogin={setIsOpenLogin} />
         </Box>
-      </Box> */}
+      </Box>
 
       <Box
         sx={{

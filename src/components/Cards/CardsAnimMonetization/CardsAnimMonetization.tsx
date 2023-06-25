@@ -20,43 +20,47 @@ const CardsAnimMonetization: FC<Props> = ({
 }) => {
   const opacityShadowBlock = useTransform(
     scrollYProgressCards,
-    [0, 0.6],
+    [0.2, 0.6],
     [1, 0]
   );
 
-  const rotate1 = useTransform(scrollYProgressCards, [0, 0.6], [7, -0.5]);
+  const rotate1 = useTransform(
+    scrollYProgressCards,
+    [0.2, 0.6],
+    [7, innerWidth < 640 ? 0 : -0.5]
+  );
 
-  const scale1 = useTransform(scrollYProgressCards, [0, 0.6], [1, 1.5]);
+  const scale1 = useTransform(scrollYProgressCards, [0.2, 0.6], [1, 1.5]);
 
   const translateX2 = useTransform(
     scrollYProgressCards,
-    [0, 0.6],
-    [innerWidth * 0.42, innerWidth * 0.8]
+    [0.2, 0.6],
+    [innerWidth * 0.35, innerWidth * 0.8]
   );
 
   const translateY2 = useTransform(
     scrollYProgressCards,
-    [0, 0.6],
+    [0.2, 0.6],
     [innerWidth * -0.24, innerWidth * -0.4]
   );
 
-  const rotate2 = useTransform(scrollYProgressCards, [0, 0.6], [21, -90]);
+  const rotate2 = useTransform(scrollYProgressCards, [0.2, 0.6], [21, -90]);
 
-  const scale2 = useTransform(scrollYProgressCards, [0, 0.6], [0.4, 0.5]);
+  const scale2 = useTransform(scrollYProgressCards, [0.2, 0.6], [0.4, 0.5]);
 
   const translateX3 = useTransform(
     scrollYProgressCards,
-    [0, 0.6],
+    [0.2, 0.6],
     [innerWidth * -0.36, innerWidth * -0.8]
   );
 
   const translateY3 = useTransform(
     scrollYProgressCards,
-    [0, 0.6],
+    [0.2, 0.6],
     [innerWidth * -0.28, innerWidth * -0.4]
   );
 
-  const rotate3 = useTransform(scrollYProgressCards, [0, 0.6], [-21, 20]);
+  const rotate3 = useTransform(scrollYProgressCards, [0.2, 0.6], [-21, 20]);
   return (
     <Box
       ref={blockRef}
@@ -72,6 +76,7 @@ const CardsAnimMonetization: FC<Props> = ({
         marginTop: "140px",
       }}
     >
+      <div ref={mainContentRef}></div>
       <Box
         sx={{
           display: "flex",
@@ -746,6 +751,7 @@ const CardsAnimMonetization: FC<Props> = ({
       <motion.div
         style={{
           opacity: opacityShadowBlock,
+          mixBlendMode: "color-dodge",
         }}
       >
         <Box
@@ -757,12 +763,12 @@ const CardsAnimMonetization: FC<Props> = ({
             height: "1100px",
             left: 0,
             margin: "auto",
-            mixBlendMode: "color-dodge",
             borderRadius: "380px",
             filter: "blur(76px)",
             zIndex: -1,
             background:
               "radial-gradient(50% 38% at 48% 50%,#5bdcc7 0,rgba(52,120,246,.25) 100%)",
+            mixBlendMode: "color-dodge",
 
             "@media(max-width: 640px)": {
               filter: "blur(66px)",
@@ -773,8 +779,6 @@ const CardsAnimMonetization: FC<Props> = ({
           }}
         ></Box>
       </motion.div>
-
-      <div ref={mainContentRef}></div>
     </Box>
   );
 };

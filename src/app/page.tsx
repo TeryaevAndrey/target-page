@@ -30,7 +30,7 @@ export default function Home() {
   const mainContentRef = useRef(null);
   const { scrollYProgress: scrollYProgressCards } = useScroll({
     target: blockRef,
-    offset: ["end end", "start start"],
+    offset: ["start end", "start start"],
   });
 
   const { scrollYProgress: scrollYProgressMain } = useScroll({

@@ -19,59 +19,59 @@ const Cards: FC<Props> = ({
 }) => {
   const translateX1 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * -0.42, innerWidth * -0.8]
   );
 
   const translateY1 = useTransform(
     scrollYProgressCards,
-    [0, 1],
-    [innerWidth * -0.12, innerWidth * -0.3]
+    [0.2, 1],
+    [innerWidth * -0.13, innerWidth * -0.3]
   );
 
-  const rotate1 = useTransform(scrollYProgressCards, [0, 1], [4, -30]);
+  const rotate1 = useTransform(scrollYProgressCards, [0.2, 1], [4, -30]);
 
   const translateX2 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * 0.42, innerWidth * 0.8]
   );
 
   const translateY2 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * -0.1, innerWidth * -0.4]
   );
 
-  const rotate2 = useTransform(scrollYProgressCards, [0, 1], [21, -90]);
+  const rotate2 = useTransform(scrollYProgressCards, [0.2, 1], [21, -90]);
 
   const translateX3 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * -0.36, innerWidth * -0.8]
   );
 
   const translateY3 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * -0.16, innerWidth * -0.4]
   );
 
-  const rotate3 = useTransform(scrollYProgressCards, [0, 1], [-18, -120]);
+  const rotate3 = useTransform(scrollYProgressCards, [0.2, 1], [-18, -120]);
 
   const translateX4 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * 0.42, innerWidth * 0.8]
   );
 
   const translateY4 = useTransform(
     scrollYProgressCards,
-    [0, 1],
+    [0.2, 1],
     [innerWidth * -0.3, innerWidth * -0.8]
   );
 
-  const rotate4 = useTransform(scrollYProgressCards, [0, 1], [-4, -120]);
+  const rotate4 = useTransform(scrollYProgressCards, [0.2, 1], [-4, -120]);
 
   const opacityShadowBlock = useTransform(
     scrollYProgressCards,
@@ -90,7 +90,7 @@ const Cards: FC<Props> = ({
         position: "relative",
         zIndex: 2,
         transition: "0.3s",
-        mt: "18vh",
+        mt: "17vh",
       }}
     >
       <motion.div
@@ -341,6 +341,7 @@ const Cards: FC<Props> = ({
       <motion.div
         style={{
           opacity: opacityShadowBlock,
+          mixBlendMode: "color-dodge",  
         }}
       >
         <Box
