@@ -15,10 +15,12 @@ import {
   Footer,
   LoginModal,
 } from "@/components";
-import { Cards } from "@/components/Cards/Cards";
 import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { lazy, useEffect, useRef, useState } from "react";
+
+const LazyCards = lazy(() => import("../components/Cards/Cards"));
 
 export default function Home() {
   const [innerWidth, setInnerWidth] = useState(
@@ -56,7 +58,7 @@ export default function Home() {
       <Header />
       <Banner bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
 
-      <Cards
+      <LazyCards
         blockRef={blockRef}
         mainContentRef={mainContentRef}
         scrollYProgressCards={scrollYProgressCards}

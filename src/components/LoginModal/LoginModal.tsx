@@ -27,7 +27,10 @@ const mainStart = {
   },
 };
 
-export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
+export const LoginModal: FC<Props> = ({
+  isOpenLogin,
+  setIsOpenLogin,
+}) => {
   const [modalIdx, setModalIdx] = useState(0);
 
   return (
@@ -185,7 +188,8 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
               </Box>
               <Typography component="span">по телефону</Typography>
             </Button>
-            <Button
+            <Box
+              component="a"
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -200,7 +204,6 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
                 color: "#fff",
                 textTransform: "none",
               }}
-              onClick={() => setModalIdx(3)}
             >
               <Box
                 sx={{
@@ -228,7 +231,7 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
                 </svg>
               </Box>
               <Typography component="span">через телеграм</Typography>
-            </Button>
+            </Box>
           </Box>
           <Typography
             component="p"

@@ -11,7 +11,7 @@ type Props = {
   innerWidth: number;
 };
 
-export const Cards: FC<Props> = ({
+const Cards: FC<Props> = ({
   blockRef,
   scrollYProgressCards,
   mainContentRef,
@@ -362,3 +362,5 @@ export const Cards: FC<Props> = ({
     </Box>
   );
 };
+
+export default Cards;
