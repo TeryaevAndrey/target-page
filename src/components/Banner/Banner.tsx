@@ -10,13 +10,13 @@ type Props = {
 
 export const Banner: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
   return (
-    <motion.div style={{ opacity: bannerOpacity }}>
+    <motion.div
+      style={{ opacity: bannerOpacity, position: "relative", zIndex: 10 }}
+    >
       <Box
         component="section"
         sx={{
           marginTop: { xs: "18vh", sm: "22vh", md: "28vh" },
-          position: "relative",
-          zIndex: 10,
         }}
       >
         <Box

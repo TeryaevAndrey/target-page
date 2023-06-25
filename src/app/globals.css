@@ -21,6 +21,20 @@ a {
   color: #fff;
 }
 
+body {
+  scrollbar-color: #999 #1f2023;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #333;
+}
+body::-webkit-scrollbar-track {
+  background: #1f2023;
+}
+
 .card {
   width: 100%;
   background-color: #27292d;
