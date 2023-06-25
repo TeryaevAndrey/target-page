@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import BotImg from "./../../../../public/images/bot-img.webp";
 
 export const BotCard = () => {
   return (
@@ -61,7 +62,7 @@ export const BotCard = () => {
 
         <Image
           className="bot-img"
-          src="/images/bot-img.webp"
+          src={BotImg}
           alt="confirm-admin"
           width={0}
           height={0}

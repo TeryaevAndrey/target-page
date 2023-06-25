@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import IncomeImg from "../../../../public/images/income.webp";
 
 export const IncomeCard = () => {
   return (
@@ -69,7 +70,7 @@ export const IncomeCard = () => {
 
         <Image
           className="income-img"
-          src="/images/income.webp"
+          src={IncomeImg}
           alt="confirm-admin"
           width={0}
           height={0}

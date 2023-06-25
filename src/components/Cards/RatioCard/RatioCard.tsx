@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import RatioImg from "../../../../public/images/ratio.webp";
 
 export const RatioCard = () => {
   return (
@@ -62,7 +63,7 @@ export const RatioCard = () => {
 
         <Image
           className="ratio-img"
-          src="/images/ratio.webp"
+          src={RatioImg}
           alt="confirm-admin"
           width={0}
           height={0}

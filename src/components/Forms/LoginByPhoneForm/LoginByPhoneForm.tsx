@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import InputMask from "react-input-mask";
+import RussiaImg from "../../../../public/images/russia.webp";
 
 type Props = {
   isOpenLogin: boolean;
@@ -156,12 +157,7 @@ export const LoginByPhoneForm: FC<Props> = ({ isOpenLogin, setModalIdx }) => {
             },
           }}
         >
-          <Image
-            src="/images/russia.webp"
-            alt="russia"
-            width={20}
-            height={20}
-          />
+          <Image src={RussiaImg} alt="russia" width={20} height={20} />
           <Typography
             component="span"
             sx={{

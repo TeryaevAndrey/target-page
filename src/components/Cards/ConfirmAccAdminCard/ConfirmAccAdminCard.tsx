@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import ConfirmAdminImg from "../../../../public/images/confirm-admin.webp";
 
 export const ConfirmAccAdminCard = () => {
   return (
@@ -61,7 +62,7 @@ export const ConfirmAccAdminCard = () => {
 
         <Image
           className="confirm-admin-img"
-          src="/images/confirm-admin.webp"
+          src={ConfirmAdminImg}
           alt="confirm-admin"
           width={0}
           height={0}

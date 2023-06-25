@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import RightsImg from "../../../../public/images/rights-img.svg";
 
 export const RightsBotCard = () => {
   return (
@@ -72,7 +73,7 @@ export const RightsBotCard = () => {
 
         <Image
           className="rights-img"
-          src="/images/rights-img.svg"
+          src={RightsImg}
           alt="confirm-admin"
           width={0}
           height={0}

@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FC, RefObject } from "react";
+import InfoImg from "./../../../public/images/info.png";
 
 type Props = {
   blockRef: RefObject<HTMLDivElement>;
@@ -85,7 +86,7 @@ export const Cards: FC<Props> = ({
         position: "relative",
         zIndex: 2,
         transition: "0.3s",
-        mt: "18vh",
+        mt: "18vh"
       }}
     >
       <motion.div
@@ -114,7 +115,7 @@ export const Cards: FC<Props> = ({
               gap: "10px",
             }}
           >
-            <Image src="/images/info.png" alt="info" width={19} height={19} />
+            <Image src={InfoImg} alt="info" width={19} height={19} />
             <Typography
               component="p"
               sx={{
@@ -175,7 +176,7 @@ export const Cards: FC<Props> = ({
               gap: "10px",
             }}
           >
-            <Image src="/images/info.png" alt="info" width={19} height={19} />
+            <Image src={InfoImg} alt="info" width={19} height={19} />
             <Typography
               component="p"
               sx={{
@@ -236,7 +237,7 @@ export const Cards: FC<Props> = ({
               gap: "10px",
             }}
           >
-            <Image src="/images/info.png" alt="info" width={19} height={19} />
+            <Image src={InfoImg} alt="info" width={19} height={19} />
             <Typography
               component="p"
               sx={{
@@ -297,7 +298,7 @@ export const Cards: FC<Props> = ({
               gap: "10px",
             }}
           >
-            <Image src="/images/info.png" alt="info" width={19} height={19} />
+            <Image src={InfoImg} alt="info" width={19} height={19} />
             <Typography
               component="p"
               sx={{

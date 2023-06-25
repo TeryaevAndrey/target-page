@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import LogoImg from "../../../public/images/logo.webp";
 
 export const Logo = () => {
   return (
@@ -16,7 +17,7 @@ export const Logo = () => {
           },
         }}
       >
-        <Image src="/images/logo.webp" alt="logo" width={32} height={32} />
+        <Image src={LogoImg} alt="logo" width={32} height={32} />
         <Typography
           component="span"
           sx={{

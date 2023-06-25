@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import StartBotImg from "../../../../public/images/start-bot-img.svg";
 
 export const StartBotCard = () => {
   return (
@@ -61,7 +62,7 @@ export const StartBotCard = () => {
 
         <Image
           className="start-bot-img"
-          src="/images/start-bot-img.svg"
+          src={StartBotImg}
           alt="confirm-admin"
           width={0}
           height={0}
