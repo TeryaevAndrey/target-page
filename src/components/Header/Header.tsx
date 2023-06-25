@@ -11,7 +11,7 @@ export const Header = () => {
         padding: "15px 0",
       }}
     >
-      <Link href="#">
+      <Link href="/monetization">
         <Box
           sx={{
             display: "flex",

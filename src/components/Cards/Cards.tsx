@@ -73,7 +73,11 @@ const Cards: FC<Props> = ({
 
   const rotate4 = useTransform(scrollYProgressCards, [0, 1], [-4, -120]);
 
-  const opacityShadowBlock = useTransform(scrollYProgressCards, [0, 1], [1, 0]);
+  const opacityShadowBlock = useTransform(
+    scrollYProgressCards,
+    [0, 0.6],
+    [1, 0]
+  );
   return (
     <Box
       ref={blockRef}

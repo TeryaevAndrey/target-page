@@ -17,7 +17,6 @@ import {
 } from "@/components";
 import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
-import dynamic from "next/dynamic";
 import { lazy, useEffect, useRef, useState } from "react";
 
 const LazyCards = lazy(() => import("../components/Cards/Cards"));
