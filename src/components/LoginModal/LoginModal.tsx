@@ -27,10 +27,7 @@ const mainStart = {
   },
 };
 
-export const LoginModal: FC<Props> = ({
-  isOpenLogin,
-  setIsOpenLogin,
-}) => {
+export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
   const [modalIdx, setModalIdx] = useState(0);
 
   return (
