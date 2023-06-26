@@ -35,8 +35,8 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
       }
       animate={
         isOpenLogin
-          ? { opacity: 1, visibility: "unset" }
-          : { opacity: 0, visibility: "hidden" }
+          ? { opacity: 1, visibility: "unset", scale: 1 }
+          : { opacity: 0, visibility: "hidden", scale: 1.5 }
       }
       style={{
         position: "fixed",
