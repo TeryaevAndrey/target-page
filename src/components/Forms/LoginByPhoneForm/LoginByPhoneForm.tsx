@@ -19,12 +19,6 @@ export const LoginByPhoneForm: FC<Props> = ({ isOpenLogin, setModalIdx }) => {
 
   return (
     <motion.div
-      initial={isOpenLogin ? { opacity: 0 } : { opacity: 0 }}
-      animate={isOpenLogin ? { opacity: 1 } : { opacity: 0 }}
-      transition={{
-        type: "keyframes",
-        duration: 0.4,
-      }}
       style={{
         position: "fixed",
         top: "50%",

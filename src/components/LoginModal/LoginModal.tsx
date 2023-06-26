@@ -28,8 +28,16 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
 
   return (
     <motion.div
-      initial={isOpenLogin ? { visibility: "unset" } : { visibility: "hidden" }}
-      animate={isOpenLogin ? { visibility: "unset" } : { visibility: "hidden" }}
+      initial={
+        isOpenLogin
+          ? { opacity: 1, visibility: "unset" }
+          : { opacity: 0, visibility: "hidden" }
+      }
+      animate={
+        isOpenLogin
+          ? { opacity: 1, visibility: "unset" }
+          : { opacity: 0, visibility: "hidden" }
+      }
       style={{
         position: "fixed",
         width: "100vw",
@@ -49,17 +57,12 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
     >
       {modalIdx === 0 && (
         <motion.div
-          initial={isOpenLogin ? mainStart : mainEnd}
-          animate={isOpenLogin ? mainEnd : mainStart}
-          transition={{
-            type: "keyframes",
-            duration: 0.1,
-          }}
           style={{
             position: "fixed",
             top: "50%",
             left: "50%",
             maxWidth: "370px",
+            transform: "translate(-50%, -50%)",
             backgroundColor: "#27292d",
             width: "100%",
             borderRadius: "16px",
