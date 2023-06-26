@@ -1,5 +1,6 @@
 "use client";
-import "../../app/globals.css";
+
+import "../../../src/app/globals.css";
 
 import {
   Header,
@@ -15,7 +16,7 @@ import {
   StartBotCard,
   Footer,
   LoginModal,
-  BannerMonetization,
+  QuestionsMonetization,
 } from "@/components";
 import { Box } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
@@ -72,7 +73,7 @@ export default function Monetization() {
           maxWidth: "875px",
           width: "100%",
           padding: { xs: "0 24px", sm: "0 48px" },
-          marginTop: { xs: "-120px", md: "-320px", lg: "-300px" },
+          marginTop: { xs: "-120px", md: "-195px", lg: "-300px" },
           mx: "auto",
         }}
       >
@@ -101,7 +102,7 @@ export default function Monetization() {
         }}
       >
         <Callback />
-        <Questions />
+        <QuestionsMonetization />
       </Box>
 
       <Footer />

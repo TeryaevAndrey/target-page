@@ -2,16 +2,7 @@
 
 import {
   Header,
-  Banner,
-  BotCard,
-  RightsBotCard,
-  BotTapeCard,
-  RatioCard,
-  IncomeCard,
-  Callback,
   Questions,
-  ConfirmAccAdminCard,
-  StartBotCard,
   Footer,
   LoginModal,
   BannerMonetization,
@@ -204,6 +195,10 @@ export default function Home() {
           mx: "auto",
           mt: "80px",
           padding: { xs: "0 24px", sm: "0 48px" },
+
+          "@media(max-width: 1024px)": {
+            mt: "20px",
+          },
         }}
       >
         <Box
@@ -215,10 +210,6 @@ export default function Home() {
             position: "relative",
             zIndex: 10,
             mx: "auto",
-
-            "@media(max-width: 1024px)": {
-              mt: "20px",
-            },
 
             "&::before": {
               content: '""',

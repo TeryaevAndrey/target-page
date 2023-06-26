@@ -102,7 +102,7 @@ const CardsMain: FC<Props> = ({
               maxWidth: "670px",
               padding: "48px",
 
-              "@media(max-width: 640px)": {
+              "@media(max-width: 1024px)": {
                 width: "100%",
                 maxWidth: "90%",
                 margin: "0 auto",
