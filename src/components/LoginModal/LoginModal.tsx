@@ -10,7 +10,7 @@ type Props = {
 };
 
 const mainEnd = {
-  display: "block",
+  visibility: "unset",
   scale: 1,
   translateX: "-50%",
   translateY: "-50%",
@@ -23,7 +23,7 @@ const mainStart = {
   translateY: "-50%",
   opacity: 0,
   transitionStart: {
-    display: "none",
+    visibility: "hidden",
   },
 };
 
@@ -32,8 +32,16 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
 
   return (
     <motion.div
-      initial={isOpenLogin ? { opacity: 1 } : { opacity: 0, zIndex: -1 }}
-      animate={isOpenLogin ? { opacity: 1 } : { opacity: 0, zIndex: -1 }}
+      initial={
+        isOpenLogin
+          ? { opacity: 1, visibility: "unset" }
+          : { opacity: 0, visibility: "hidden" }
+      }
+      animate={
+        isOpenLogin
+          ? { opacity: 1, visibility: "unset" }
+          : { opacity: 0, visibility: "hidden" }
+      }
       style={{
         position: "fixed",
         width: "100vw",
