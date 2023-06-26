@@ -39,7 +39,7 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
         left: 0,
         right: 0,
         backgroundColor: "rgba(31,32,35,.86)",
-        zIndex: 10,
+        zIndex: 20,
         backdropFilter: "blur(2px)",
       }}
       onClick={(e) => {
@@ -52,7 +52,7 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
           initial={isOpenLogin ? mainStart : mainEnd}
           animate={isOpenLogin ? mainEnd : mainStart}
           transition={{
-            type: "tween",
+            type: "keyframes",
             duration: 0.1,
           }}
           style={{

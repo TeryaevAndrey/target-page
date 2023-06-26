@@ -22,7 +22,7 @@ export const LoginByPhoneForm: FC<Props> = ({ isOpenLogin, setModalIdx }) => {
       initial={isOpenLogin ? { opacity: 0 } : { opacity: 0 }}
       animate={isOpenLogin ? { opacity: 1 } : { opacity: 0 }}
       transition={{
-        type: "tween",
+        type: "keyframes",
         duration: 0.4,
       }}
       style={{
