@@ -10,7 +10,6 @@ type Props = {
 };
 
 const mainEnd = {
-  visibility: "unset",
   scale: 1,
   translateX: "-50%",
   translateY: "-50%",
@@ -22,9 +21,6 @@ const mainStart = {
   translateX: "-50%",
   translateY: "-50%",
   opacity: 0,
-  transitionStart: {
-    visibility: "hidden",
-  },
 };
 
 export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
