@@ -14,3 +14,6 @@ export * from "./Questions/Questions";
 export * from "./Questions/QuestionItem/QuestionItem";
 export * from "./Footer/Footer";
 export * from "./LoginModal/LoginModal";
+export * from "./Cards/PaymentCard/PaymentCard";
+export * from "./Cards/ResultCard/ResultCard";
+export * from "./QuestionsMonetization/QuestionsMonetization";

@@ -111,32 +111,54 @@ body::-webkit-scrollbar-track {
   padding-left: 10px;
 }
 
+.payment-img {
+  margin-bottom: -90px;
+}
+
+.result-img {
+  margin-top: 20px;
+  margin-bottom: -120px;
+  transform: rotate(6deg);
+  margin-right: 20px;
+}
+
 @media (max-width: 768px) {
   .confirm-admin-img {
     max-width: 100%;
+    height: auto;
   }
 
   .bot-img {
     width: 80%;
     max-width: 100%;
+    height: auto;
   }
 
   .income-img {
     max-width: 100%;
+    height: auto;
   }
 
   .ratio-img {
     width: 100%;
+    height: auto;
   }
 
   .subject-matter-img {
     width: 100%;
+    height: auto;
   }
 
   .marketing-auto-img {
     width: 100%;
     padding-left: 0;
     margin-right: 0;
+    height: auto;
+  }
+
+  .result-img {
+    width: 100%;
+    height: auto;
   }
 }
 

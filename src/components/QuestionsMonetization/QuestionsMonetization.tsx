@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import { QuestionItem } from "./QuestionItem/QuestionItem";
+import { QuestionItem } from "@/components";
 import { useState } from "react";
 
-export const Questions = () => {
+export const QuestionsMonetization = () => {
   const [isOpenIdx, setIsOpenIdx] = useState(0);
 
   return (

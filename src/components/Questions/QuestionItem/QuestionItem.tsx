@@ -4,11 +4,18 @@ import { FC, useState } from "react";
 type Props = {
   title: string;
   contentText: string;
+  isOpenIdx: number;
+  setIsOpenIdx: Function;
+  idx: number;
 };
 
-export const QuestionItem: FC<Props> = ({ title, contentText }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+export const QuestionItem: FC<Props> = ({
+  title,
+  contentText,
+  isOpenIdx,
+  setIsOpenIdx,
+  idx,
+}) => {
   return (
     <Box
       sx={{
@@ -38,7 +45,7 @@ export const QuestionItem: FC<Props> = ({ title, contentText }) => {
             background: "#3478f6",
           },
         }}
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={() => setIsOpenIdx(isOpenIdx !== idx ? idx : 0)}
       >
         <Typography
           component="p"
@@ -69,7 +76,7 @@ export const QuestionItem: FC<Props> = ({ title, contentText }) => {
             mb: "auto",
           }}
         >
-          {isOpen ? (
+          {isOpenIdx === idx ? (
             <svg
               width="24"
               height="24"
@@ -99,7 +106,7 @@ export const QuestionItem: FC<Props> = ({ title, contentText }) => {
           )}
         </Box>
       </Box>
-      {isOpen && (
+      {isOpenIdx === idx && (
         <Box>
           <Typography
             component="p"
