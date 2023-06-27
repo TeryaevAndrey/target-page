@@ -1,7 +1,5 @@
 "use client";
 
-import "../../../src/app/globals.css";
-
 import {
   Header,
   BannerMonetization,

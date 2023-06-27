@@ -1,23 +1,34 @@
 import { Box, Button, Typography } from "@mui/material";
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { FC, RefObject } from "react";
+import { FC, RefObject, useEffect, useRef, useState } from "react";
 import AvatarFirstImg from "../../../../public/images/avatar-1.webp";
 import AvatarSecondImg from "../../../../public/images/avatar-2.webp";
 
-type Props = {
-  blockRef: RefObject<HTMLDivElement>;
-  mainContentRef: RefObject<HTMLDivElement>;
-  scrollYProgressCards: MotionValue<number>;
-  innerWidth: number;
-};
+const CardsMain: FC = () => {
+  const blockRef = useRef(null);
 
-const CardsMain: FC<Props> = ({
-  blockRef,
-  scrollYProgressCards,
-  mainContentRef,
-  innerWidth,
-}) => {
+  const { scrollYProgress: scrollYProgressCards } = useScroll({
+    target: blockRef,
+    offset: ["start end", "start start"],
+  });
+
+  const [innerWidth, setInnerWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const opacityShadowBlock = useTransform(
     scrollYProgressCards,
     [0.2, 0.6],
@@ -76,7 +87,6 @@ const CardsMain: FC<Props> = ({
         marginTop: "140px",
       }}
     >
-      <div ref={mainContentRef}></div>
       <Box
         sx={{
           display: "flex",
@@ -790,6 +800,7 @@ const CardsMain: FC<Props> = ({
           }}
         ></Box>
       </motion.div>
+
     </Box>
   );
 };

@@ -1,16 +1,21 @@
 import { Logo } from "@/components";
 import { Box, Button, Typography } from "@mui/material";
-import { MotionValue, motion } from "framer-motion";
-import { FC, useEffect, useState } from "react";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { FC, RefObject, useEffect, useRef, useState } from "react";
 
 type Props = {
-  bannerOpacity: MotionValue<number>;
   setIsOpenLogin: Function;
 };
 
-export const BannerMain: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
+const BannerMain: FC<Props> = ({ setIsOpenLogin }) => {
+  const mainContentRef = useRef(null);
   const [animText, setAnimText] = useState("");
   const [count, setCount] = useState(0);
+
+  const { scrollYProgress: scrollYProgressMain } = useScroll({
+    target: mainContentRef,
+    offset: ["end end", "start start"],
+  });
 
   useEffect(() => {
     const word = "с оплатой за клик";
@@ -26,11 +31,14 @@ export const BannerMain: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
     return () => clearInterval(interval);
   }, [animText, count]);
 
+  const bannerOpacity = useTransform(scrollYProgressMain, [0.5, 1], [1, 0]);
+
   return (
     <motion.div
       style={{ opacity: bannerOpacity, position: "relative", zIndex: 10 }}
     >
       <Box
+        ref={mainContentRef}
         component="section"
         sx={{
           marginTop: { xs: "18vh", sm: "22vh", md: "28vh" },
@@ -66,7 +74,8 @@ export const BannerMain: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
               margin: "0 auto",
             }}
           >
-            Реклама в телеграме <br /> {animText} <span className="animate-pulse">{"|"}</span>
+            Реклама в телеграме <br /> {animText}{" "}
+            <span className="animate-pulse">{"|"}</span>
           </Typography>
           <Typography
             component="p"
@@ -116,3 +125,5 @@ export const BannerMain: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
     </motion.div>
   );
 };
+
+export default BannerMain;

@@ -13,56 +13,26 @@ import { SubjectMatter } from "@/components/Cards/SubjectMatter/SubjectMatter";
 import { Box, Button, Typography } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { lazy, useEffect, useRef, useState } from "react";
-import { BannerMain } from "../components";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 
-const LazyCards = lazy(() => import("../components/Cards/CardsMain/CardsMain"));
+const DynamicCards = dynamic(
+  () => import("../components/Cards/CardsMain/CardsMain"),
+  { ssr: false }
+);
+const DynamicBanner = dynamic(() => import("../components/Banner/BannerMain"), {
+  ssr: false,
+});
 
 export default function Home() {
-  const [innerWidth, setInnerWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
   const [isOpenLogin, setIsOpenLogin] = useState(false);
-  const blockRef = useRef(null);
-  const mainContentRef = useRef(null);
-  const { scrollYProgress: scrollYProgressCards } = useScroll({
-    target: blockRef,
-    offset: ["start end", "start start"],
-  });
-
-  const { scrollYProgress: scrollYProgressMain } = useScroll({
-    target: mainContentRef,
-    offset: ["end end", "start start"],
-  });
-
-  const bannerOpacity = useTransform(scrollYProgressMain, [0.2, 1], [1, -1]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setInnerWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <Box>
       <Header title="монетизация телеграм канала" link="/monetization" />
-      <BannerMain
-        bannerOpacity={bannerOpacity}
-        setIsOpenLogin={setIsOpenLogin}
-      />
+      <DynamicBanner setIsOpenLogin={setIsOpenLogin} />
 
-      <LazyCards
-        blockRef={blockRef}
-        mainContentRef={mainContentRef}
-        scrollYProgressCards={scrollYProgressCards}
-        innerWidth={innerWidth}
-      />
+      <DynamicCards />
 
       <Box
         sx={{
