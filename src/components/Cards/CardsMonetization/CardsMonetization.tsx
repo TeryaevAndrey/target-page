@@ -1,22 +1,33 @@
 import { Box, Typography } from "@mui/material";
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { FC, RefObject } from "react";
+import { useEffect, useRef, useState } from "react";
 import InfoImg from "../../../../public/images/info.png";
 
-type Props = {
-  blockRef: RefObject<HTMLDivElement>;
-  mainContentRef: RefObject<HTMLDivElement>;
-  scrollYProgressCards: MotionValue<number>;
-  innerWidth: number;
-};
+export const CardsMonetization = () => {
+  const blockRef = useRef(null);
 
-const CardsMonetization: FC<Props> = ({
-  blockRef,
-  scrollYProgressCards,
-  mainContentRef,
-  innerWidth,
-}) => {
+  const { scrollYProgress: scrollYProgressCards } = useScroll({
+    target: blockRef,
+    offset: ["start end", "start start"],
+  });
+
+  const [innerWidth, setInnerWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const translateX1 = useTransform(
     scrollYProgressCards,
     [0.2, 1],
@@ -362,8 +373,6 @@ const CardsMonetization: FC<Props> = ({
           }}
         ></Box>
       </motion.div>
-
-      <div ref={mainContentRef}></div>
     </Box>
   );
 };

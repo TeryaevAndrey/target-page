@@ -1,19 +1,28 @@
 import { Logo } from "@/components";
 import { Box, Button, Typography } from "@mui/material";
-import { MotionValue, motion } from "framer-motion";
-import { FC } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { FC, useRef } from "react";
 
 type Props = {
-  bannerOpacity: MotionValue<number>;
   setIsOpenLogin: Function;
 };
 
-export const BannerMonetization: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
+export const BannerMonetization: FC<Props> = ({ setIsOpenLogin }) => {
+  const mainContentRef = useRef(null);
+
+  const { scrollYProgress: scrollYProgressMain } = useScroll({
+    target: mainContentRef,
+    offset: ["end end", "start start"],
+  });
+
+  const bannerOpacity = useTransform(scrollYProgressMain, [0.5, 1], [1, 0]);
+
   return (
     <motion.div
       style={{ opacity: bannerOpacity, position: "relative", zIndex: 10 }}
     >
       <Box
+        ref={mainContentRef}
         component="section"
         sx={{
           marginTop: { xs: "18vh", sm: "22vh", md: "28vh" },

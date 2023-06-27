@@ -9,13 +9,12 @@ import {
   ResultCard,
   CardsMain,
   BannerMain,
+  MarketingAuto,
+  SubjectMatter,
+  Loader,
 } from "@/components";
-import { MarketingAuto } from "@/components/Cards/MarketingAuto/MarketingAuto";
-import { SubjectMatter } from "@/components/Cards/SubjectMatter/SubjectMatter";
-import { Loader } from "@/components/Loader/Loader";
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
-import { Router } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Home() {

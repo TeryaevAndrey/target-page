@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { FC, RefObject, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import AvatarFirstImg from "../../../../public/images/avatar-1.webp";
 import AvatarSecondImg from "../../../../public/images/avatar-2.webp";
 
