@@ -9,20 +9,6 @@ type Props = {
   setIsOpenLogin: Function;
 };
 
-const mainEnd = {
-  scale: 1,
-  translateX: "-50%",
-  translateY: "-50%",
-  opacity: 1,
-};
-
-const mainStart = {
-  scale: 1.5,
-  translateX: "-50%",
-  translateY: "-50%",
-  opacity: 0,
-};
-
 export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
   const [modalIdx, setModalIdx] = useState(0);
 
@@ -35,8 +21,8 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
       }
       animate={
         isOpenLogin
-          ? { opacity: 1, visibility: "unset", scale: 1 }
-          : { opacity: 0, visibility: "hidden", scale: 1.5 }
+          ? { opacity: 1, visibility: "unset" }
+          : { opacity: 0, visibility: "hidden" }
       }
       style={{
         position: "fixed",
@@ -57,12 +43,43 @@ export const LoginModal: FC<Props> = ({ isOpenLogin, setIsOpenLogin }) => {
     >
       {modalIdx === 0 && (
         <motion.div
+          initial={
+            isOpenLogin
+              ? {
+                  opacity: 1,
+                  visibility: "unset",
+                  translateX: "-50%",
+                  translateY: "-50%",
+                }
+              : {
+                  opacity: 0,
+                  visibility: "hidden",
+                  translateX: "-50%",
+                  translateY: "-50%",
+                }
+          }
+          animate={
+            isOpenLogin
+              ? {
+                  opacity: 1,
+                  visibility: "unset",
+                  scale: 1,
+                  translateX: "-50%",
+                  translateY: "-50%",
+                }
+              : {
+                  opacity: 0,
+                  visibility: "hidden",
+                  scale: 1.5,
+                  translateX: "-50%",
+                  translateY: "-50%",
+                }
+          }
           style={{
             position: "fixed",
             top: "50%",
             left: "50%",
             maxWidth: "370px",
-            transform: "translate(-50%, -50%)",
             backgroundColor: "#27292d",
             width: "100%",
             borderRadius: "16px",
