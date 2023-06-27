@@ -1,17 +1,31 @@
 import { Logo } from "@/components";
 import { Box, Button, Typography } from "@mui/material";
 import { MotionValue, motion } from "framer-motion";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 type Props = {
   bannerOpacity: MotionValue<number>;
   setIsOpenLogin: Function;
 };
 
-export const BannerMain: FC<Props> = ({
-  bannerOpacity,
-  setIsOpenLogin,
-}) => {
+export const BannerMain: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
+  const [animText, setAnimText] = useState("");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const word = "с оплатой за клик";
+
+    const interval = setInterval(() => {
+      if (animText !== word) {
+        setCount((prev) => prev + 1);
+
+        setAnimText((prev) => prev + word[count]);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [animText, count]);
+
   return (
     <motion.div
       style={{ opacity: bannerOpacity, position: "relative", zIndex: 10 }}
@@ -52,7 +66,7 @@ export const BannerMain: FC<Props> = ({
               margin: "0 auto",
             }}
           >
-            Реклама в телеграме с оплатой за клик
+            Реклама в телеграме <br /> {animText} <span className="animate-pulse">{"|"}</span>
           </Typography>
           <Typography
             component="p"
