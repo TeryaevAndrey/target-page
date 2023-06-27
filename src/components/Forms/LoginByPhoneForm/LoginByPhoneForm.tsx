@@ -19,8 +19,6 @@ export const LoginByPhoneForm: FC<Props> = ({ isOpenLogin, setModalIdx }) => {
 
   return (
     <motion.div
-      initial={isOpenLogin ? { opacity: 0 } : { opacity: 1 }}
-      animate={isOpenLogin ? { opacity: 1 } : { opacity: 0 }}
       transition={{
         type: "tween",
         duration: 0.4,
