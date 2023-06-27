@@ -105,250 +105,254 @@ export const CardsMonetization = () => {
       }}
     >
       <motion.div
-        style={{
-          translateX: translateX1,
-          translateY: translateY1,
-          rotate: rotate1,
-          scale: 0.5,
-          zIndex: 10,
-        }}
+        initial={{ opacity: 0, translateY: 200 }}
+        animate={{ opacity: 1, translateY: 0 }}
       >
-        <Box
-          sx={{
-            backgroundColor: "#fff",
-            boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
-            borderRadius: "12px",
-            width: { xs: "370px", sm: "450px", md: "100%" },
-            maxWidth: "550px",
-            padding: "10px",
+        <motion.div
+          style={{
+            translateX: translateX1,
+            translateY: translateY1,
+            rotate: rotate1,
+            scale: 0.5,
+            zIndex: 10,
           }}
         >
           <Box
             sx={{
-              display: "flex",
-              alignItems: "start",
-              gap: "10px",
+              backgroundColor: "#fff",
+              boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
+              borderRadius: "12px",
+              width: { xs: "370px", sm: "450px", md: "100%" },
+              maxWidth: "550px",
+              padding: "10px",
             }}
           >
-            <Image src={InfoImg} alt="info" width={19} height={19} />
-            <Typography
-              component="p"
+            <Box
               sx={{
-                fontSize: { xs: "10px", lg: "16px" },
-                color: "#000",
+                display: "flex",
+                alignItems: "start",
+                gap: "10px",
               }}
             >
-              Платформа для запуска коротких постов с рекламой канала или сайта
-              в телеграме
+              <Image src={InfoImg} alt="info" width={19} height={19} />
               <Typography
-                component="span"
+                component="p"
                 sx={{
-                  color: "#3390ec",
-                  fontSize: "10px",
-                  lineHeight: 1.5,
+                  fontSize: { xs: "10px", lg: "16px" },
+                  color: "#000",
                 }}
               >
-                t-target.ru
+                Платформа для запуска коротких постов с рекламой канала или
+                сайта в телеграме
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "#3390ec",
+                    fontSize: "10px",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  t-target.ru
+                </Typography>
               </Typography>
+            </Box>
+            <Typography
+              component="span"
+              sx={{
+                fontSize: "7px",
+                color: "#686c72",
+                display: "flex",
+                justifyContent: "end",
+              }}
+            >
+              изменено 19:42
             </Typography>
           </Box>
-          <Typography
-            component="span"
-            sx={{
-              fontSize: "7px",
-              color: "#686c72",
-              display: "flex",
-              justifyContent: "end",
-            }}
-          >
-            изменено 19:42
-          </Typography>
-        </Box>
-      </motion.div>
-      <motion.div
-        style={{
-          translateX: translateX2,
-          translateY: translateY2,
-          rotate: rotate2,
-          scale: 0.9,
-          zIndex: 10,
-        }}
-      >
-        <Box
-          sx={{
-            backgroundColor: "#fff",
-            boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
-            borderRadius: "12px",
-            width: { xs: "370px", sm: "425px" },
-            maxWidth: "550px",
-            padding: "10px",
+        </motion.div>
+        <motion.div
+          style={{
+            translateX: translateX2,
+            translateY: translateY2,
+            rotate: rotate2,
+            scale: 0.9,
+            zIndex: 10,
           }}
         >
           <Box
             sx={{
-              display: "flex",
-              alignItems: "start",
-              gap: "10px",
+              backgroundColor: "#fff",
+              boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
+              borderRadius: "12px",
+              width: { xs: "370px", sm: "425px" },
+              maxWidth: "550px",
+              padding: "10px",
             }}
           >
-            <Image src={InfoImg} alt="info" width={19} height={19} />
-            <Typography
-              component="p"
+            <Box
               sx={{
-                fontSize: { xs: "10px", lg: "16px" },
-                color: "#000",
+                display: "flex",
+                alignItems: "start",
+                gap: "10px",
               }}
             >
-              Платформа для запуска коротких постов с рекламой канала или сайта
-              в телеграме
+              <Image src={InfoImg} alt="info" width={19} height={19} />
               <Typography
-                component="span"
+                component="p"
                 sx={{
-                  color: "#3390ec",
-                  fontSize: "10px",
-                  lineHeight: 1.5,
+                  fontSize: { xs: "10px", lg: "16px" },
+                  color: "#000",
                 }}
               >
-                t-target.ru
+                Платформа для запуска коротких постов с рекламой канала или
+                сайта в телеграме
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "#3390ec",
+                    fontSize: "10px",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  t-target.ru
+                </Typography>
               </Typography>
+            </Box>
+            <Typography
+              component="span"
+              sx={{
+                fontSize: "7px",
+                color: "#686c72",
+                display: "flex",
+                justifyContent: "end",
+              }}
+            >
+              изменено 19:42
             </Typography>
           </Box>
-          <Typography
-            component="span"
-            sx={{
-              fontSize: "7px",
-              color: "#686c72",
-              display: "flex",
-              justifyContent: "end",
-            }}
-          >
-            изменено 19:42
-          </Typography>
-        </Box>
-      </motion.div>
-      <motion.div
-        style={{
-          translateX: translateX3,
-          translateY: translateY3,
-          rotate: rotate3,
-          scale: 0.9,
-          zIndex: 10,
-        }}
-      >
-        <Box
-          sx={{
-            backgroundColor: "#fff",
-            boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
-            borderRadius: "12px",
-            width: { xs: "370px", sm: "425px", md: "max-content" },
-            maxWidth: "550px",
-            padding: "10px",
+        </motion.div>
+        <motion.div
+          style={{
+            translateX: translateX3,
+            translateY: translateY3,
+            rotate: rotate3,
+            scale: 0.9,
+            zIndex: 10,
           }}
         >
           <Box
             sx={{
-              display: "flex",
-              alignItems: "start",
-              gap: "10px",
+              backgroundColor: "#fff",
+              boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
+              borderRadius: "12px",
+              width: { xs: "370px", sm: "425px", md: "max-content" },
+              maxWidth: "550px",
+              padding: "10px",
             }}
           >
-            <Image src={InfoImg} alt="info" width={19} height={19} />
-            <Typography
-              component="p"
+            <Box
               sx={{
-                fontSize: { xs: "10px", lg: "16px" },
-                color: "#000",
+                display: "flex",
+                alignItems: "start",
+                gap: "10px",
               }}
             >
-              Платформа для запуска коротких постов с рекламой канала или сайта
-              в телеграме
+              <Image src={InfoImg} alt="info" width={19} height={19} />
               <Typography
-                component="span"
+                component="p"
                 sx={{
-                  color: "#3390ec",
-                  fontSize: "10px",
-                  lineHeight: 1.5,
+                  fontSize: { xs: "10px", lg: "16px" },
+                  color: "#000",
                 }}
               >
-                t-target.ru
+                Платформа для запуска коротких постов с рекламой канала или
+                сайта в телеграме
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "#3390ec",
+                    fontSize: "10px",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  t-target.ru
+                </Typography>
               </Typography>
+            </Box>
+            <Typography
+              component="span"
+              sx={{
+                fontSize: "7px",
+                color: "#686c72",
+                display: "flex",
+                justifyContent: "end",
+              }}
+            >
+              изменено 19:42
             </Typography>
           </Box>
-          <Typography
-            component="span"
-            sx={{
-              fontSize: "7px",
-              color: "#686c72",
-              display: "flex",
-              justifyContent: "end",
-            }}
-          >
-            изменено 19:42
-          </Typography>
-        </Box>
-      </motion.div>
-      <motion.div
-        style={{
-          translateX: translateX4,
-          translateY: translateY4,
-          rotate: rotate4,
-          scale: 0.5,
-          zIndex: 10,
-        }}
-      >
-        <Box
-          sx={{
-            backgroundColor: "#fff",
-            boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
-            borderRadius: "12px",
-            width: { xs: "370px", sm: "425px", md: "max-content" },
-            maxWidth: "550px",
-            padding: "10px",
+        </motion.div>
+        <motion.div
+          style={{
+            translateX: translateX4,
+            translateY: translateY4,
+            rotate: rotate4,
+            scale: 0.5,
+            zIndex: 10,
           }}
         >
           <Box
             sx={{
-              display: "flex",
-              alignItems: "start",
-              gap: "10px",
+              backgroundColor: "#fff",
+              boxShadow: "0 1px 4px rgba(31,32,35,0.13)",
+              borderRadius: "12px",
+              width: { xs: "370px", sm: "425px", md: "max-content" },
+              maxWidth: "550px",
+              padding: "10px",
             }}
           >
-            <Image src={InfoImg} alt="info" width={19} height={19} />
-            <Typography
-              component="p"
+            <Box
               sx={{
-                fontSize: { xs: "10px", lg: "16px" },
-                color: "#000",
+                display: "flex",
+                alignItems: "start",
+                gap: "10px",
               }}
             >
-              Платформа для запуска коротких постов с рекламой канала или сайта
-              в телеграме
+              <Image src={InfoImg} alt="info" width={19} height={19} />
               <Typography
-                component="span"
+                component="p"
                 sx={{
-                  color: "#3390ec",
-                  fontSize: "10px",
-                  lineHeight: 1.5,
+                  fontSize: { xs: "10px", lg: "16px" },
+                  color: "#000",
                 }}
               >
-                t-target.ru
+                Платформа для запуска коротких постов с рекламой канала или
+                сайта в телеграме
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "#3390ec",
+                    fontSize: "10px",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  t-target.ru
+                </Typography>
               </Typography>
+            </Box>
+            <Typography
+              component="span"
+              sx={{
+                fontSize: "7px",
+                color: "#686c72",
+                display: "flex",
+                justifyContent: "end",
+              }}
+            >
+              изменено 19:42
             </Typography>
           </Box>
-          <Typography
-            component="span"
-            sx={{
-              fontSize: "7px",
-              color: "#686c72",
-              display: "flex",
-              justifyContent: "end",
-            }}
-          >
-            изменено 19:42
-          </Typography>
-        </Box>
+        </motion.div>
       </motion.div>
-
       <motion.div
         style={{
           opacity: opacityShadowBlock,
