@@ -8,10 +8,7 @@ type Props = {
   setIsOpenLogin: Function;
 };
 
-export const BannerMonetization: FC<Props> = ({
-  bannerOpacity,
-  setIsOpenLogin,
-}) => {
+export const BannerMonetization: FC<Props> = ({ bannerOpacity, setIsOpenLogin }) => {
   return (
     <motion.div
       style={{ opacity: bannerOpacity, position: "relative", zIndex: 10 }}
@@ -52,7 +49,7 @@ export const BannerMonetization: FC<Props> = ({
               margin: "0 auto",
             }}
           >
-            Реклама в телеграме с оплатой за клик
+            Способ монетизации телеграм канала
           </Typography>
           <Typography
             component="p"
@@ -66,7 +63,7 @@ export const BannerMonetization: FC<Props> = ({
               lineHeight: 1.3,
             }}
           >
-            Проверьте свою идею в разных телеграм каналах
+            Дополнительный доход с короткой рекламы на канале
           </Typography>
 
           <Button
@@ -95,7 +92,7 @@ export const BannerMonetization: FC<Props> = ({
             }}
             onClick={() => setIsOpenLogin(true)}
           >
-            Запустить рекламу
+            Подключить канал
           </Button>
         </Box>
       </Box>

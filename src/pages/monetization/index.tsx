@@ -4,7 +4,7 @@ import "../../../src/app/globals.css";
 
 import {
   Header,
-  Banner,
+  BannerMonetization,
   BotCard,
   RightsBotCard,
   BotTapeCard,
@@ -60,7 +60,7 @@ export default function Monetization() {
   return (
     <Box>
       <Header title="реклама в телеграм каналах" link="/" />
-      <Banner bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
+      <BannerMonetization bannerOpacity={bannerOpacity} setIsOpenLogin={setIsOpenLogin} />
 
       <LazyCards
         blockRef={blockRef}

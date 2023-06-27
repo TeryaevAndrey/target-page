@@ -1,6 +1,5 @@
 export * from "./Header/Header";
 export * from "./Logo/Logo";
-export * from "./Banner/Banner";
 export * from "./Banner/BannerMonetization";
 export * from "./Cards/ConfirmAccAdminCard/ConfirmAccAdminCard";
 export * from "./Cards/BotCard/BotCard";
@@ -17,3 +16,4 @@ export * from "./LoginModal/LoginModal";
 export * from "./Cards/PaymentCard/PaymentCard";
 export * from "./Cards/ResultCard/ResultCard";
 export * from "./QuestionsMonetization/QuestionsMonetization";
+export * from "./Banner/BannerMain";

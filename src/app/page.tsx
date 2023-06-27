@@ -5,7 +5,6 @@ import {
   Questions,
   Footer,
   LoginModal,
-  BannerMonetization,
   PaymentCard,
   ResultCard,
 } from "@/components";
@@ -15,6 +14,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { lazy, useEffect, useRef, useState } from "react";
+import { BannerMain } from "../components";
 
 const LazyCards = lazy(() => import("../components/Cards/CardsMain/CardsMain"));
 
@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <Box>
       <Header title="монетизация телеграм канала" link="/monetization" />
-      <BannerMonetization
+      <BannerMain
         bannerOpacity={bannerOpacity}
         setIsOpenLogin={setIsOpenLogin}
       />
