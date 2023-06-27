@@ -17,3 +17,5 @@ export * from "./Cards/PaymentCard/PaymentCard";
 export * from "./Cards/ResultCard/ResultCard";
 export * from "./QuestionsMonetization/QuestionsMonetization";
 export * from "./Banner/BannerMain";
+export * from "./Cards/CardsMain/CardsMain";
+

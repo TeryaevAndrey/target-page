@@ -5,7 +5,7 @@ import { FC, RefObject, useEffect, useRef, useState } from "react";
 import AvatarFirstImg from "../../../../public/images/avatar-1.webp";
 import AvatarSecondImg from "../../../../public/images/avatar-2.webp";
 
-const CardsMain: FC = () => {
+export const CardsMain: FC = () => {
   const blockRef = useRef(null);
 
   const { scrollYProgress: scrollYProgressCards } = useScroll({

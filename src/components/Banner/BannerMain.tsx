@@ -7,7 +7,7 @@ type Props = {
   setIsOpenLogin: Function;
 };
 
-const BannerMain: FC<Props> = ({ setIsOpenLogin }) => {
+export const BannerMain: FC<Props> = ({ setIsOpenLogin }) => {
   const mainContentRef = useRef(null);
   const [animText, setAnimText] = useState("");
   const [count, setCount] = useState(0);
@@ -125,5 +125,3 @@ const BannerMain: FC<Props> = ({ setIsOpenLogin }) => {
     </motion.div>
   );
 };
-
-export default BannerMain;
